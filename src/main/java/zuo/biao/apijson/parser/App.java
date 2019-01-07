@@ -13,13 +13,7 @@ public class App
     public static void main( String[] args ) throws SQLProviderException
     {
     	long st = System.currentTimeMillis();
-		String json = "{\r\n" + 
-				"    \"Product:p\":{\r\n" + 
-				"        \"@column\":\"name,max(price):max_price\",\r\n" + 
-				"        \"name~\": \"双11\",\r\n" + 
-				"        \"@group\": \"name\"\r\n" + 
-				"    }\r\n" + 
-				"}";
+		String json = "{'Product:p':{'name~':'双11','@group':'name','@column':'name,max(price):max_price'}}";
 		JSONObject req = JSONObject.parseObject(json);
 		long fastJsonet = System.currentTimeMillis();
 		//JSON解析太耗时了174ms
